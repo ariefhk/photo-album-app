@@ -11,7 +11,7 @@ const UploadButton = () => {
       <CldUploadButton
         uploadPreset="ru1pmy2k"
         onSuccess={() => {
-          console.log("refresh");
+          // console.log("refresh");
           setTimeout(() => {
             router.refresh();
           }, 1000);
