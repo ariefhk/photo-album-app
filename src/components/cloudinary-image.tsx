@@ -40,7 +40,7 @@ const CloudinaryImage = (
           className="absolute top-2 left-2 w-[24px] h-[24px] cursor-pointer hover:text-red-500"
         />
       )}
-      <ImageMenu />
+      <ImageMenu image={imageData} />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 "use client";
 
 import ImageGrid from "@/components/image-grid";
-import { SearchResult } from "./page";
-import CloudinaryImage from "../../components/cloudinary-image";
+import { SearchResult } from "@/app/gallery/page";
+import CloudinaryImage from "@/components/cloudinary-image";
 
-const GalleryList = ({ images }: { images: SearchResult[] }) => {
+const AlbumsList = ({ images }: { images: SearchResult[] }) => {
   return (
     <ImageGrid
       images={images}
@@ -17,4 +17,4 @@ const GalleryList = ({ images }: { images: SearchResult[] }) => {
   );
 };
 
-export default GalleryList;
+export default AlbumsList;

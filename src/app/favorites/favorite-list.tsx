@@ -19,7 +19,7 @@ const FavoritesList = ({ initialResources }: { initialResources: SearchResult[] 
         getImage={(imageData: SearchResult) => {
           return (
             <CloudinaryImage
-              // key={idx + 1}
+              key={imageData.public_id}
               imageData={imageData}
               alt="Image of something"
               width="400"
