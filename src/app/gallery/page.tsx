@@ -2,6 +2,7 @@ import ForceRefresh from "@/components/force-refresh";
 import UploadButton from "./upload-button";
 import cloudinary from "cloudinary";
 import GalleryList from "./gallery-list";
+import { unstable_noStore as noStore } from "next/cache";
 
 export type SearchResult = {
   public_id: string;
@@ -9,6 +10,7 @@ export type SearchResult = {
 };
 
 const GalleryPage = async () => {
+  noStore();
   const results = (await cloudinary.v2.search
     .expression("resource_type:image")
     .sort_by("created_at", "desc")

@@ -2,8 +2,10 @@ import cloudinary from "cloudinary";
 import { SearchResult } from "../gallery/page";
 import ForceRefresh from "@/components/force-refresh";
 import FavoritesList from "./favorite-list";
+import { unstable_noStore as noStore } from "next/cache";
 
 const FavoritesPage = async () => {
+  noStore();
   const results = (await cloudinary.v2.search
     .expression("resource_type:image AND tags=favorite")
     .sort_by("created_at", "desc")

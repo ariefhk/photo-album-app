@@ -5,8 +5,9 @@ import { Button } from "./ui/button";
 import { HiOutlinePhotograph, HiFolder, HiHeart } from "react-icons/hi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Folder } from "@/app/albums/page";
 
-const Sidebar = ({ className }: { className?: string }) => {
+const Sidebar = ({ className, folders }: { className?: string; folders: Folder[] }) => {
   const pathname = usePathname();
 
   return (
@@ -27,6 +28,20 @@ const Sidebar = ({ className }: { className?: string }) => {
                 Albums
               </Link>
             </Button>
+            {folders.map((folder, idx) => {
+              return (
+                <Button
+                  key={idx + 1}
+                  asChild
+                  variant={pathname === `/albums/${folder.name}` ? "secondary" : "ghost"}
+                  className="w-full justify-start flex gap-2"
+                >
+                  <Link href={`/albums/${folder.name}`} className="pl-12">
+                    {folder.name}
+                  </Link>
+                </Button>
+              );
+            })}
             <Button
               asChild
               variant={pathname === "/favorites" ? "secondary" : "ghost"}

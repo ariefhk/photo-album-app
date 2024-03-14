@@ -33,5 +33,6 @@ export const addImageToAlbum = async (image: SearchResult, album: string) => {
 
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
+  revalidatePath("/gallery", "page");
   revalidatePath("/albums/[albumName]", "page");
 };

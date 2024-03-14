@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Sidebar from "@/components/sidebar";
+import SideBarWrapper from "@/components/sidebar-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
           </div>
         </div>
         <div className="flex">
-          <Sidebar className="w-1/5" />
+          <SideBarWrapper />
           <main className="w-full px-4 pt-12">{children}</main>
         </div>
       </body>

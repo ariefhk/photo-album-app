@@ -20,7 +20,7 @@ type Ref = HTMLButtonElement;
 
 const MyButton = forwardRef<Ref>((props, ref) => {
   return (
-    <Button {...props} ref={ref} variant="secondary" className="w-full">
+    <Button {...props} ref={ref} variant="ghost" className="w-full flex justify-start">
       <HiFolderAdd className="w-5 h-5 mr-2" />
       <span>Add to Album</span>
     </Button>

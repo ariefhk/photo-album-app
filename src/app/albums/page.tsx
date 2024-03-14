@@ -1,10 +1,12 @@
 import ForceRefresh from "@/components/force-refresh";
 import cloudinary from "cloudinary";
 import AlbumCard from "./album-card";
+import { unstable_noStore as noStore } from "next/cache";
 
 export type Folder = { name: string; path: string };
 
 const AlbumsPage = async () => {
+  noStore();
   const { folders } = (await cloudinary.v2.api.root_folders()) as {
     folders: Folder[];
   };
